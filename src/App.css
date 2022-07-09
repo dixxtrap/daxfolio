@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&family=Roboto:ital,wght@0,100;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap");
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.3em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar-thumb {
+ @apply bg-slate-200 bg-opacity-30 ;
+
+
+  border: 0.08em solid  ;
+  @apply border-gray-600;
+  border-radius: 100vw;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-600;
+  border-radius: 100vw;
+  align-self: center;
+  margin-block: 0.5em;
+  margin: auto;
+}
+::-webkit-scrollbar-thumb:hover {
+@apply bg-slate-600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.sectionTitle{
+  
+  @apply  hidden md:flex leading-snug pl-8  text-4xl md:text-9xl relative ;
+color: inherit;
+ -webkit-text-fill-color: transparent;
+ -webkit-text-stroke-color: inherit;
+ -webkit-text-stroke-width: 3px;
+}
+.sectionTitle::before{
+  content: "";
+
+  width:80%;
+ 
+  @apply  rounded-sm h-[40%] md:h-[60%] backdrop-blur-[8px]   bg-slate-500/10  absolute self-center;
+}
+.sectiionTitleVis{
+  @apply bg-gradient-to-br bg-clip-text  min-w-[100px]  fill-transparent to-red-400 text-4xl font-bold md:absolute;
+  -webkit-text-fill-color: transparent;
+}
+.myscrolling{
+
+  @apply snap-y snap-mandatory;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.banner{
+  background-image: url("assets/images/im1.jpg");
+  background-size: 100%;
+
+
+}
+.drawerOpen{
+  @apply drawer  translate-x-[0%];
+}
+.drawerClose{
+ @apply drawer  -translate-x-[100%];
+}
+.drawer{
+  transition: all 1s;
+@apply duration-1000    fixed h-screen  w-screen flex bg-slate-900/50 lg:hidden ;
+}
+.navItem{
+@apply   min-w-[100px]  font-bold hover:tracking-widest;
+
+}
+.section{
+display: flex;
+  @apply snap-center p-2 md:p-5   flex flex-col  md:mb-16;
+
+}
+.progressItem{
+  width:var(--width);
+  animation: contentVariant 2s;
+}
+.circularProgress{
+  @apply h-20 w-20 overflow-hidden  relative flex rounded-full  justify-center items-center bg-slate-50/10;
+}
+.circularProgress::after{
+  content:" ";
+  @apply   h-16 w-16 self-center justify-self-center  rounded-full m-1 z-[11] bg-slate-800;
+
+}
+.circularProgress::before{
+content: " ";
+  height:var(--width) ;
+  @apply absolute  w-full z-10 self-end justify-self-end place-self-end  bg-red-400;
+animation:contentVariantHeight 2s ;
+
+}
+.pointWithBlur{
+  @apply relative h-6 w-6 blur-sm items-center justify-center  bg-red-50/5;
+}
+.pointWithBlur::before{
+  content: "";
+  @apply absolute h-3 w-3 m-1 ;
+}
+@keyframes contentVariantHeight {
+  from {height: 0%;}
+  to {height:var(--width);}
+}
+@keyframes contentVariant {
+  from {width: 0%;}
+  to {width:var(--width) ;}
 }
 
-.App-link {
-  color: #61dafb;
+.testyItem{
+  transition: all 1s;
+
+  @apply  relative flex m-4  hover:-translate-y-2  snap-center items-center p-1  justify-center  max-w-[320px] md:max-w-[350px]  lg:max-w-[400px]  xl:max-w-[440px];
+}
+.testyItemBack{
+  transition:all 1s ;
+  @apply absolute w-full    h-full z-[11]  rounded-xl rounded-tl-[30px] rounded-br-[30px] overflow-hidden  flex  ;
+}
+.testyItemFront {
+  @apply z-[12] h-full w-full   overflow-hidden flex flex-col rounded-xl bg-gradient-to-b from-yellow-300/10  rounded-tl-[30px] rounded-br-[30px]  p-4  bg-gray-900 text-stone-50 border-spacing-2 border border-yellow-500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.testyItemBack::after{
+  content: "";
+  @apply h-24 w-24  z-10   bg-gradient-to-tr  from-yellow-500  absolute left-0 top-0   ;
+}
+.testyItemBack::before{
+  content: "";
+  @apply h-24 w-24  z-10  bg-gradient-to-bl from-yellow-500  absolute right-0 bottom-0  ;
+}
+.project{
+ @apply flex flex-col    relative
+}
+.project svg{
+transition: all 1s ;
+  filter: drop-shadow(2px 5px 10px #58A8F6);
+}
+.project:hover>svg{
+
+  filter: drop-shadow(2px 10px 50px  #58A8F6);
+  transform:  translateY(4px);
+}
+.inputWithIcon{
+@apply  pl-10 md:pl-14 py-3;
+}
+.contactInput{
+  @apply  bg-transparent  ring-2 placeholder:text-white/70  text-white  ring-green-400 focus:ring-white  rounded-xl;
 }
