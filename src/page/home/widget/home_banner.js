@@ -4,7 +4,8 @@ function HomeBanner() {
   return (
     <div className="w-full      banner ">
       <div className="w-full h-full pl-6 flex bg-gradient-to-r from-slate-900 to-transparent   py-5 flex-col items-start justify-center      ">
-        <h2 className="text-5xl font-bold text-white"> Hi I am</h2>
+      
+      <div>  <h2 className="text-5xl font-bold text-white"> Hi I am</h2>
       
         <h2 className="text-3xl md:text-6xl font-black my-4  text-white">  <Typewriter
         
@@ -22,6 +23,11 @@ function HomeBanner() {
           applications basées sur les technologies du web et des réseaux
         </h2>
       </div>
+      <div>
+        <img/>
+      </div>
+      </div>
+
     </div>
   );
 }

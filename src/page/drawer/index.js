@@ -8,7 +8,11 @@ import Tecnologie from "./widget/tecnologie";
 
 function Drawer({ isMobile }) {
   return (
-    <div className={"flex   w-[300px] md:w-[330px]   h-screen  bg-slate-900/75 flex-col "}>
+    <div
+      className={
+        "flex   w-[300px] md:w-[330px]   h-screen  bg-slate-900/75 flex-col "
+      }
+    >
       <DrawerBanner></DrawerBanner>
 
       <div className="w-full  flex-grow my-5  overflow-y-scroll">
@@ -16,7 +20,7 @@ function Drawer({ isMobile }) {
           <Contact />
           <Skills />
           <Tecnologie />
-<Knowledge/>
+          <Knowledge />
           <Ide />
         </div>
       </div>

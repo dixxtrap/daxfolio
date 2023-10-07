@@ -50,7 +50,7 @@ const listPoject = [
 ];
 function Projects() {
   return (
-    <section id="project" className="section   py-5   flex flex-col">
+    <section id="project" className="section  ">
       <div className=" flex items-center  text-sky-400">
         <img src={projetSvg} alt="about" className="h-16 md:h-36" />
       
